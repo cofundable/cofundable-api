@@ -1,25 +1,17 @@
-## Summary
+### Summary
 
-Concise description of changes proposed in this pull request
+{Concise description of contribution}
 
-Fixes #
+- Fixes #{ISSUE}
+- Time to review: **{x} minutes**
 
-## Changes Proposed
+### Changes proposed
 
-- {Description of change 1}
-- {Description of change 2}
+- {Item added, updated or removed}
+- {Item added, updated or removed}
 
-## Blockers or Questions
+### Context for reviewers
+> Testing instructions, background context, more in-depth details of the implementation, and anything else you'd like to call out or ask reviewers. Explain how the changes were verified.
 
-- [ ] {Concise description of blocker or question 1 that may prevent merge}
-- [ ] {Concise description of blocker or question 2 that may prevent merge}
-
-## Additional Context
-
-Brief description of context
-
-## Instructions to Review
-
-1. [Checkout PR Locally](https://docs.github.com/en/github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally)
-1. {Step 2}
-1. {Step 3}
+### Additional information
+> Screenshots, GIF demos, code examples or output to help show the changes working as expected.
