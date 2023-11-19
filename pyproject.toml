@@ -16,9 +16,8 @@ pre-commit = "^2.13.0"
 pylint = "^2.17.5"
 pytest = "^7.4.0"
 pytest-cov = "^4.1.0"
-safety = "^2.3.5"
-tox = "^3.28.0"
 ruff = "^0.1.6"
+tox = "^3.28.0"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
@@ -46,6 +45,7 @@ include = '\.pyi?$'
 line-length = 79
 [tool.liccheck]
 # Authorized and unauthorized licenses in LOWER CASE
+# TODO(@widal001): 2023-11-18 - Troubleshoot liccheck or find similar package
 authorized_licenses = [
   "bsd",
   "new bsd",
@@ -80,7 +80,24 @@ unauthorized_licenses = []
 
 [tool.pylint."MESSAGE CONTROL"]
 disable = [
-  "C0114", # Disables module docstrings
-  "R0201", # Disables method could have been a function
   "R0903", # Disables too few public methods
 ]
+
+[tool.ruff]
+extend-safe-fixes = ["E", "D"]
+ignore = [
+  "ANN101", # missing type annotation for self
+  "ANN102", # missing type annotation for cls
+  "D203", # no blank line before class
+  "D212", # multi-line summary first line
+  "FIX002", # line contains TODO
+  "PD901", # pandas df variable name
+  "PLR0913", # Too many arguments to function call
+  "PTH123", # `open()` should be replaced by `Path.open()`
+  "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
+  "TD003", # missing an issue link on TODO
+  "T201", # use of `print` detected
+]
+line-length = 100
+select = ["ALL"]
+show-fixes = true
