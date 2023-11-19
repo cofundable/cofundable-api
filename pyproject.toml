@@ -1,16 +1,15 @@
 [tool.poetry]
 authors = ["widal001 <williamdaly422@gmail.com>"]
-description = "Boilerplate code for basic python package"
+description = "Cofundable's REST API"
 license = "MIT License"
-name = "boilerplate"
+name = "cofundable"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4.0"
+python = ">=3.11,<4.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
-flake8 = "^6.1.0"
 liccheck = "^0.6.2"
 mdformat = "^0.7.7"
 pre-commit = "^2.13.0"
@@ -19,6 +18,7 @@ pytest = "^7.4.0"
 pytest-cov = "^4.1.0"
 safety = "^2.3.5"
 tox = "^3.28.0"
+ruff = "^0.1.6"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
