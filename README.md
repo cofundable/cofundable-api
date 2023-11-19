@@ -1,24 +1,21 @@
-# Python Boilerplate
+# Cofundable
 
 <details open="open">
 <summary>Table of Contents</summary>
 
 <!-- TOC -->
 
-- [About this Project](#about-this-project)
-  - [Made With](#made-with)
-  - [Relevant Documents](#relevant-documents)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-  - [This Template](#this-template)
-  - [{Use Case 1}](#use-case-1)
-- [Vision and Roadmap](#vision-and-roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Maintainers](#maintainers)
-- [Acknowledgements](#acknowledgements)
+- [Cofundable](#cofundable)
+  - [About this Project](#about-this-project)
+    - [Made With](#made-with)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Maintainers](#maintainers)
+  - [Acknowledgements](#acknowledgements)
 
 <!-- /TOC -->
 
@@ -26,9 +23,7 @@
 
 ## About this Project
 
-<!-- TODO: Replace with a brief description of your own project -->
-
-Python Boilerplate provides a common file structure for a Python project and encourages best practices in python development, including some simple code quality checks set up and some idiomatic examples of python data strctures and functions. This project is a template that can be used as a foundation for future projects.
+The Cofundable API is a RESTful API written in python that serves as the backend for the Cofundable platform.
 
 ### Made With
 
@@ -42,18 +37,11 @@ Python Boilerplate provides a common file structure for a Python project and enc
 - [pylint](https://www.pylint.org/) - Checks that code follows idiomatic best practices for Python.
 - [pre-commit](https://pre-commit.com/) - Runs code quality checks before code is committed.
 
-### Relevant Documents
-
-- [Architecture Decision Records](docs/adrs)
-- [Project Scoping Document](docs/project-scope.md)
-- [Data Dictionary](docs/data-dictionary.md)
-- ... <!-- other relevant documents should be added to the docs/ directory and linked here -->
-
 ## Getting Started
 
 ### Prerequisites
 
-- Python installed on your local machine, a version between 3.7 and 3.9
+- Python installed on your local machine, a version between 3.10 and 3.11
 - Poetry installed on your local machine
 
 In order to check that you have both Python and Poetry installed, run the following in your command line, and the output should look something like this:
@@ -62,7 +50,7 @@ In order to check that you have both Python and Poetry installed, run the follow
 
 ```
 $ python --version && poetry --version
-> Python 3.9.0
+> Python 3.11.0
 > Poetry version 1.1.6
 ```
 
@@ -74,15 +62,15 @@ If you have python installed but not poetry, follow these installation instructi
 - [Global install on Windows](https://python-poetry.org/docs/#windows-powershell-install-instructions)
 - Local install inside a virtual environment using `pip` **NOTE:** This is not recommended because of potential package conflicts:
   - Create a virtual environment: `python -m venv env`
-  - Acvitate the virtual environment. **NOTE:** This virtual environment must be active any time you are working with this project:
+  - Activate the virtual environment. **NOTE:** This virtual environment must be active any time you are working with this project:
     - Mac/Linux: `source env/bin/activate`
     - Windows: `env\Scripts\activate`
   - Install poetry: `pip install poetry`
 
 ### Installation
 
-1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) on your local machine: `git clone https://github.com/widal001/python-boilerplate.git`
-1. Change directory into the cloned project: `cd python-boilerplate`
+1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) on your local machine: `git clone https://github.com/cofundable/cofundable-api.git`
+1. Change directory into the cloned project: `cd cofundable-api`
 1. Install the package: `poetry install`
 1. Install `pre-commit` to autoformat your code: `poetry run pre-commit install`
 1. Execute all tests: `poetry run tox`
@@ -90,7 +78,7 @@ If you have python installed but not poetry, follow these installation instructi
    ```
     py39: commands succeeded
     lint: commands succeeded
-    checkdeps: commands succeeded
+    typecheck: commands succeeded
     pytest: commands succeeded
     coverage: commands succeeded
     congratulations :)
@@ -98,76 +86,7 @@ If you have python installed but not poetry, follow these installation instructi
 
 ## Usage
 
-### This Template
-
-<!-- TODO: Remove this section after following the steps below -->
-
-When using this boilerplate code as a template for your own project, follow the steps below:
-
-1. Complete all of the `TODO` items listed as comments in this README
-1. Pick a new name for your package, then replace the word `boilerplate` with that new name in the following places:
-   - `pyproject.toml`
-   - `tox.ini`
-   - `src/boilerplate/` and all files within that directory
-   - `tests/` and all of the files within that directory
-1. All new python code should be added either as a single module or collection of modules under the `src/{your_package_name}/` directory. For reference:
-   ```
-   pyproject.toml
-   src/
-     your_package_name/
-       main.py
-       your_new_module_1.py
-       your_new_module_2/
-          your_new_module_2_1.py
-          your_new_module_2_2.py
-   tests/
-   ```
-1. If the new code requires a package that is not already installed, add it to the project by using `poetry add <package_name>`
-1. If you make any manual changes to the `pyproject.toml` file make sure you run: `poetry lock && poetry install`
-1. Each new method or function you write needs to be accompanied by a test which calls that method or function.  These unit and/or integration tests should be added to the `tests/` directory using a file structure that mirrors the modules you are contributing to. For reference:
-   ```
-   tests/
-     conftest.py
-     test_main.py
-     test_your_new_module_1.py
-     your_new_module_2/
-        test_your_new_module_2_1.py
-        test_your_new_module_2_2.py
-
-   ```
-   > **NOTE**
-   >
-   > - CI/CD checks will only pass if more than 90% of the code base is executed by the tests
-   > - Pytest requires the following naming conventions for [test discovery](https://docs.pytest.org/en/reorganize-docs/new-docs/user/naming_conventions.html)
-
-
-### {Use Case 1}
-
-{1-2 sentence summary of this use case}
-
-1. {Step 1 to complete use case}
-1. {Step 2 to complete use case}
-1. ... <!-- number of steps and use cases may vary -->
-
-## Vision and Roadmap
-
-The vision for this template is to simplify the process of creating open source python projects with high quality codebase and mechanisms that promote smart and collaborative project governance. This project aims to fulfill this vision by:
-
-- Adopting a common python package file structure
-- Implementing basic linting and code quality checks
-- Reinforcing compliance with those code quality checks using CI/CD
-- Providing templates for things like documentation, issues, and pull requests
-- Offering pythonic implementation examples of common data structures and scripting tasks like:
-  - Creating classes, methods, and functions
-  - Setting up unit and integration testing
-  - Reading and writing to files
-
-For a more detailed breakdown of the feature roadmap and other development priorities please reference the following links:
-
-- [Feature Roadmap](https://github.com/widal001/python-boilerplate/projects/1)
-- [Architecture Decisions](https://github.com/widal001/python-boilerplate/projects/2)
-- [Bug Fixes](https://github.com/widal001/python-boilerplate/projects/3)
-- [All Issues](https://github.com/widal001/python-boilerplate/issues)
+Coming soon!
 
 ## Contributing
 
